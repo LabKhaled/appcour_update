@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+          <router-outlet> </router-outlet>
+        <h2>Mes appareils</h2>
+        <ul class="list-group">
+          <app-appareil *ngFor="let appareil of appareils; let k=index" [appareilName]="appareil.name" [appareilStatus]="appareil.status"[index]="k"> 
+          </app-appareil>
+        </ul>
+        <button class="btn btn-success" [disabled]="isAuth"(click)="Toutallumer()">Tout Allumer</button>
+        <button class="btn btn-danger" [disabled]="isAuth"(click)="Touteteindre()">Tout Eteindre</button>
+      </div>
+    </div>
+  </div>
